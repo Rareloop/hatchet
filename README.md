@@ -1,6 +1,6 @@
 # Hatchet - CLI for Lumberjack
-![CI](https://travis-ci.org/Rareloop/lumberjack-validation.svg?branch=master)
-![Coveralls](https://coveralls.io/repos/github/Rareloop/lumberjack-validation/badge.svg?branch=master)
+![CI](https://travis-ci.org/Rareloop/hatchet.svg?branch=master)
+![Coveralls](https://coveralls.io/repos/github/Rareloop/hatchet/badge.svg?branch=master)
 
 ## Installation
 ```
