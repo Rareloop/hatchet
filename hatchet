@@ -1,0 +1,28 @@
+<?php
+
+// Prevent from running over HTTP
+if( php_sapi_name() !== 'cli' ) {
+    die('Meant to be run from command line');
+}
+
+// Autoload dependencies and load environment variables
+$basePath = __DIR__ . '/../../../../';
+
+require_once($basePath . '/vendor/autoload.php');
+require_once($basePath . '/config/application.php');
+
+// This is a little gross but it does prevent the functions.php file from being loaded
+// No idea if it has any other knock on impact?
+define('WP_INSTALLING', true);
+
+// Boot WordPress without attempting to load the theme template
+define('WP_USE_THEMES', false);
+require_once(ABSPATH . 'wp-load.php');
+
+// Bootstrap Hatchet from the Container
+$app = require_once('bootstrap/app.php');
+$hatchet = $app->make(Rareloop\Hatchet\Hatchet::class);
+$hatchet->bootstrap();
+
+// Execute the current command
+$hatchet->run();

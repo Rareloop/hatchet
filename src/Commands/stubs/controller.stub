@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Rareloop\Lumberjack\Http\Responses\TimberResponse;
+use Timber\Timber;
+
+class DummyController
+{
+    public function handle()
+    {
+        $context = Timber::get_context();
+
+        return new TimberResponse('templates.twig', $context);
+    }
+}
