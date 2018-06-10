@@ -1,6 +1,7 @@
 {
     "name": "rareloop/hatchet",
     "require": {
+        "php": "^7.1.3",
         "rareloop/lumberjack-core": "^3.0.0",
         "symfony/console": "^4.1"
     },
