@@ -8,8 +8,11 @@ use Rareloop\Lumberjack\Config;
 
 class RegisterCommands
 {
-    public function bootstrap(Application $app, Config $config, Hatchet $hatchet)
+    public function bootstrap(Application $app)
     {
+        $config = $app->get(Config::class);
+        $hatchet = $app->get(Hatchet::class);
+
         $commands = $config->get('hatchet.commands', []);
 
         foreach ($commands as $command) {
