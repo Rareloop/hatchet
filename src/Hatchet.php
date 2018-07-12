@@ -3,7 +3,6 @@
 namespace Rareloop\Hatchet;
 
 use DI\ContainerBuilder;
-use Rareloop\Hatchet\Commands\ControllerMake;
 use Rareloop\Lumberjack\Application;
 use Rareloop\Lumberjack\Bootstrappers\BootProviders;
 use Rareloop\Lumberjack\Bootstrappers\LoadConfiguration;
@@ -11,6 +10,9 @@ use Rareloop\Lumberjack\Bootstrappers\RegisterExceptionHandler;
 use Rareloop\Lumberjack\Bootstrappers\RegisterFacades;
 use Rareloop\Lumberjack\Bootstrappers\RegisterProviders;
 use Symfony\Component\Console\Application as ConsoleApplication;
+
+use Rareloop\Hatchet\Commands\PostTypeMake;
+use Rareloop\Hatchet\Commands\ControllerMake;
 
 class Hatchet
 {
@@ -26,6 +28,7 @@ class Hatchet
 
     protected $defaultCommands = [
         ControllerMake::class,
+        PostTypeMake::class,
     ];
 
     public function __construct(Application $app)
