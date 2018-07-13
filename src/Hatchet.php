@@ -4,6 +4,7 @@ namespace Rareloop\Hatchet;
 
 use DI\ContainerBuilder;
 use Rareloop\Hatchet\Commands\ControllerMake;
+use Rareloop\Hatchet\Commands\RouteList;
 use Rareloop\Lumberjack\Application;
 use Rareloop\Lumberjack\Bootstrappers\BootProviders;
 use Rareloop\Lumberjack\Bootstrappers\LoadConfiguration;
@@ -26,6 +27,7 @@ class Hatchet
 
     protected $defaultCommands = [
         ControllerMake::class,
+        RouteList::class,
     ];
 
     public function __construct(Application $app)
