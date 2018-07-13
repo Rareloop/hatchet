@@ -2,20 +2,10 @@
 
 namespace Rareloop\Hatchet\Test\Commands;
 
-use Mockery;
 use PHPUnit\Framework\TestCase;
-use Rareloop\Hatchet\Commands\Command;
 use Rareloop\Hatchet\Commands\ControllerMake;
 use Rareloop\Hatchet\Hatchet;
-use Rareloop\Hatchet\Parser;
 use Rareloop\Hatchet\Test\Unit\Commands\CommandTestTrait;
-use Rareloop\Lumberjack\Application;
-use Symfony\Component\Console\Application as ConsoleApplication;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Output\OutputInterface;
-use org\bovigo\vfs\vfsStream;
 
 /**
  * @runTestsInSeparateProcesses
