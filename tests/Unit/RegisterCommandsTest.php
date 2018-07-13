@@ -9,6 +9,8 @@ use Rareloop\Hatchet\Hatchet;
 use Rareloop\Hatchet\RegisterCommands;
 use Rareloop\Lumberjack\Application;
 use Rareloop\Lumberjack\Config;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class RegisterCommandsTest extends TestCase
 {
