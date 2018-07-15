@@ -22,13 +22,7 @@ trait CommandTestTrait
     public function setUp()
     {
         parent::setup();
-        $this->rootFileSystem = vfsStream::setup($this->vfsStreamDirectoryName, null, [
-            'app' => [
-                'Http' => [
-                    'Controllers' => [],
-                ],
-            ],
-        ]);
+        $this->rootFileSystem = vfsStream::setup($this->vfsStreamDirectoryName);
     }
 
     protected function callHatchetCommand(Hatchet $hatchet, $name, array $params = [])
@@ -55,16 +49,21 @@ trait CommandTestTrait
 
     protected function assertMockPath($path)
     {
-        return $this->assertTrue($this->rootFileSystem->hasChild($path));
+        return $this->assertTrue($this->rootFileSystem->hasChild($path), 'Path does not exist: `' . $path . '`');
     }
 
     protected function assertMockPathMissing($path)
     {
-        return $this->assertFalse($this->rootFileSystem->hasChild($path));
+        return $this->assertFalse($this->rootFileSystem->hasChild($path), 'Path exists: `' . $path . '`');
     }
 
     protected function requireMockFile($path)
     {
         require vfsStream::url($this->vfsStreamDirectoryName . '/' . $path);
+    }
+
+    protected function getMockFileContents($path)
+    {
+        return file_get_contents(vfsStream::url($this->vfsStreamDirectoryName . '/' . $path));
     }
 }

@@ -27,8 +27,10 @@ class ControllerMakeTest extends TestCase
         ]);
 
         // Assert the file was created
-        $this->assertMockPath('app/Http/Controllers/MyController.php');
-        $this->requireMockFile('/app/Http/Controllers/MyController.php');
+        $relativePath = 'app/Http/Controllers/MyController.php';
+        $this->assertMockPath($relativePath);
+        $this->assertNotContains('DummyController', $this->getMockFileContents($relativePath));
+        $this->requireMockFile($relativePath);
 
         // Assert we can instantiate it and make inferences on it's properties
         $controller = new \App\Http\Controllers\MyController;
