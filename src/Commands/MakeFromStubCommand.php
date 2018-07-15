@@ -12,7 +12,7 @@ abstract class MakeFromStubCommand extends Command
         $directory = dirname($absolutePath);
 
         if (!is_dir($directory)) {
-            mkdir($directory, 0644, true);
+            mkdir($directory, 0754, true);
         }
 
         file_put_contents($absolutePath, $contents);
