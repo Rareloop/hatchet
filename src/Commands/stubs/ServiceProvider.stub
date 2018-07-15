@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Providers;
+
+use Rareloop\Lumberjack\Providers\ServiceProvider;
+
+class DummyServiceProvider extends ServiceProvider
+{
+    /**
+     * Register required items with the Application Container
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+    }
+
+    /**
+     * Perform any required boot operations
+     *
+     * @return void
+     */
+    public function boot()
+    {
+
+    }
+}
