@@ -4,7 +4,10 @@ namespace Rareloop\Hatchet;
 
 use DI\ContainerBuilder;
 use Rareloop\Hatchet\Commands\ControllerMake;
+use Rareloop\Hatchet\Commands\ExceptionMake;
 use Rareloop\Hatchet\Commands\RouteList;
+use Rareloop\Hatchet\Commands\ServiceProviderMake;
+use Rareloop\Hatchet\Commands\ViewModelMake;
 use Rareloop\Lumberjack\Application;
 use Rareloop\Lumberjack\Bootstrappers\BootProviders;
 use Rareloop\Lumberjack\Bootstrappers\LoadConfiguration;
@@ -27,6 +30,9 @@ class Hatchet
 
     protected $defaultCommands = [
         ControllerMake::class,
+        ExceptionMake::class,
+        ServiceProviderMake::class,
+        ViewModelMake::class,
         RouteList::class,
     ];
 
