@@ -42,7 +42,11 @@ class PostTypeMake extends MakeFromStubCommand
             'Revisions',
             'Archives',
         ];
-        $question = new ChoiceQuestion('<info>Which features do you want?</info> [default: 0,1,2,3]', $features, '0,1,2,3');
+        $question = new ChoiceQuestion(
+            '<info>Which features do you want?</info> [default: 0,1,2,3]',
+            $features,
+            '0,1,2,3'
+        );
         $question->setMultiselect(true);
         $featuresSelected = $helper->ask($input, $output, $question);
 
