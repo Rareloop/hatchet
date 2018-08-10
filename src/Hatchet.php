@@ -5,6 +5,7 @@ namespace Rareloop\Hatchet;
 use DI\ContainerBuilder;
 use Rareloop\Hatchet\Commands\ControllerMake;
 use Rareloop\Hatchet\Commands\ExceptionMake;
+use Rareloop\Hatchet\Commands\PostTypeMake;
 use Rareloop\Hatchet\Commands\RouteList;
 use Rareloop\Hatchet\Commands\ServiceProviderMake;
 use Rareloop\Hatchet\Commands\ViewModelMake;
@@ -34,6 +35,7 @@ class Hatchet
         ServiceProviderMake::class,
         ViewModelMake::class,
         RouteList::class,
+        PostTypeMake::class,
     ];
 
     public function __construct(Application $app)

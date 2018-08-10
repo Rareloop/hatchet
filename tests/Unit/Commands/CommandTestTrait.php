@@ -59,11 +59,16 @@ trait CommandTestTrait
 
     protected function requireMockFile($path)
     {
-        require vfsStream::url($this->vfsStreamDirectoryName . '/' . $path);
+        return require vfsStream::url($this->vfsStreamDirectoryName . '/' . $path);
     }
 
     protected function getMockFileContents($path)
     {
-        return file_get_contents(vfsStream::url($this->vfsStreamDirectoryName . '/' . $path));
+        return file_get_contents($this->getMockPath($path));
+    }
+
+    protected function getMockPath($path)
+    {
+        return vfsStream::url($this->vfsStreamDirectoryName . '/' . $path);
     }
 }
