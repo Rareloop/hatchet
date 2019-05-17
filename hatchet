@@ -21,6 +21,8 @@ require_once(ABSPATH . 'wp-load.php');
 
 // Bootstrap Hatchet from the Container
 $app = require_once('bootstrap/app.php');
+$app->bind(Rareloop\Lumberjack\Exceptions\HandlerInterface::class, $app->make(Rareloop\Hatchet\Exceptions\Handler::class));
+
 $hatchet = $app->make(Rareloop\Hatchet\Hatchet::class);
 $hatchet->bootstrap();
 

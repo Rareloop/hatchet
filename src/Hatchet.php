@@ -22,6 +22,7 @@ class Hatchet
     private $app;
 
     protected $bootstrappers = [
+        RegisterExceptionHandler::class,
         LoadConfiguration::class,
         RegisterFacades::class,
         RegisterProviders::class,
