@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Rareloop\Lumberjack\Http\Responses\TimberResponse;
 use Timber\Timber;
 
-class DummyController
+class DummyController extends Controller
 {
     public function handle()
     {

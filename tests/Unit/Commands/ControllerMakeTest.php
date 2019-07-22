@@ -2,6 +2,7 @@
 
 namespace Rareloop\Hatchet\Test\Commands;
 
+use Mockery;
 use PHPUnit\Framework\TestCase;
 use Rareloop\Hatchet\Commands\ControllerMake;
 use Rareloop\Hatchet\Hatchet;
@@ -16,8 +17,10 @@ class ControllerMakeTest extends TestCase
     use CommandTestTrait;
 
     /** @test */
-    public function can_create_a_command_with_a_name()
+    public function can_create_a_controller_with_a_name()
     {
+        Mockery::mock('\App\Http\Controllers\Controller');
+
         $app = $this->appWithMockBasePath();
         $hatchet = $app->make(Hatchet::class);
         $hatchet->console()->add($app->make(ControllerMake::class));
@@ -35,5 +38,6 @@ class ControllerMakeTest extends TestCase
         // Assert we can instantiate it and make inferences on it's properties
         $controller = new \App\Http\Controllers\MyController;
         $this->assertInstanceOf(\App\Http\Controllers\MyController::class, $controller);
+        $this->assertInstanceOf(\App\Http\Controllers\Controller::class, $controller);
     }
 }
