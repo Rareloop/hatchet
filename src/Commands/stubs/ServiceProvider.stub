@@ -13,7 +13,7 @@ class DummyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        //
     }
 
     /**
@@ -23,6 +23,6 @@ class DummyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        //
     }
 }

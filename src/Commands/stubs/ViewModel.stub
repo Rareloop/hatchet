@@ -13,6 +13,6 @@ class DummyViewModel extends ViewModel
      */
     public function __construct()
     {
-
+        //
     }
 }
