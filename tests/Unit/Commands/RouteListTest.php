@@ -25,15 +25,16 @@ class RouteListTest extends TestCase
         $hatchet->console()->add($app->make(RouteList::class));
         $router = new Router($app);
         $app->bind(Router::class, $router);
-        $router->get('/test/123', function () {})->name('MyRouteName');
+        $router->get('/test/123', function () {
+        })->name('MyRouteName');
 
         $output = $this->callHatchetCommand($hatchet, 'route:list');
         $output = $output->fetch();
 
-        $this->assertContains('/test/123', $output);
-        $this->assertContains('Closure', $output);
-        $this->assertContains('GET', $output);
-        $this->assertContains('MyRouteName', $output);
+        $this->assertStringContainsString('/test/123', $output);
+        $this->assertStringContainsString('Closure', $output);
+        $this->assertStringContainsString('GET', $output);
+        $this->assertStringContainsString('MyRouteName', $output);
     }
 
     /** @test */
@@ -49,9 +50,9 @@ class RouteListTest extends TestCase
         $output = $this->callHatchetCommand($hatchet, 'route:list');
         $output = $output->fetch();
 
-        $this->assertContains('/test/123', $output);
-        $this->assertContains(RouteListTestController::class, $output);
-        $this->assertContains('GET', $output);
+        $this->assertStringContainsString('/test/123', $output);
+        $this->assertStringContainsString(RouteListTestController::class, $output);
+        $this->assertStringContainsString('GET', $output);
     }
 
     /** @test */
@@ -62,17 +63,22 @@ class RouteListTest extends TestCase
         $hatchet->console()->add($app->make(RouteList::class));
         $router = new Router($app);
         $app->bind(Router::class, $router);
-        $router->map(['get', 'post'], '/test/123', function () {});
+        $router->map(['get', 'post'], '/test/123', function () {
+        });
 
         $output = $this->callHatchetCommand($hatchet, 'route:list');
         $output = $output->fetch();
 
-        $this->assertContains('GET|POST', $output);
+        $this->assertStringContainsString('GET|POST', $output);
     }
 }
 
 class RouteListTestController
 {
-    public function test() {}
-    public static function testStatic() {}
+    public function test()
+    {
+    }
+    public static function testStatic()
+    {
+    }
 }

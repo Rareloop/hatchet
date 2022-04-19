@@ -30,7 +30,7 @@ class ExceptionMakeTest extends TestCase
         // Assert the file was created
         $relativePath = 'app/Exceptions/MyException.php';
         $this->assertMockPath($relativePath);
-        $this->assertNotContains('DummyException', $this->getMockFileContents($relativePath));
+        $this->assertStringNotContainsString('DummyException', $this->getMockFileContents($relativePath));
         $this->requireMockFile($relativePath);
 
         // Assert we can instantiate it and make inferences on it's properties
