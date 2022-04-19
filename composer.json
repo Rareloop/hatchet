@@ -10,12 +10,12 @@
     "require-dev": {
         "php-mock/php-mock": "^2.0",
         "phpunit/phpunit": "^9.5.20",
-        "mockery/mockery": "^1.0.0",
-        "brain/monkey": "^2.0.2",
+        "mockery/mockery": "^1.4.4",
+        "brain/monkey": "^2.4.0",
         "php-coveralls/php-coveralls": "^2.5.2",
         "squizlabs/php_codesniffer": "^3.5",
         "codedungeon/phpunit-result-printer": "^0.32.0",
-        "mikey179/vfsstream": "^1.6.8"
+        "mikey179/vfsstream": "^1.6.9"
     },
     "autoload": {
         "psr-4": {
