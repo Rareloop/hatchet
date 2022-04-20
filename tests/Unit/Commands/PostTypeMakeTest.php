@@ -35,7 +35,7 @@ class PostMakeTest extends TestCase
         // Assert the file was created
         $relativePath = 'app/PostTypes/Product.php';
         $this->assertMockPath($relativePath);
-        $this->assertNotContains('DummyPostType', $this->getMockFileContents($relativePath));
+        $this->assertStringNotContainsString('DummyPostType', $this->getMockFileContents($relativePath));
         $this->requireMockFile($relativePath);
 
         // Assert we can instantiate it and make inferences on it's properties

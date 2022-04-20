@@ -19,7 +19,7 @@ trait CommandTestTrait
     protected $rootFileSystem;
     protected $vfsStreamDirectoryName = 'exampleDir';
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setup();
         $this->rootFileSystem = vfsStream::setup($this->vfsStreamDirectoryName);
@@ -41,7 +41,7 @@ trait CommandTestTrait
 
     protected function appWithMockBasePath()
     {
-        $app = Mockery::mock(Application::class.'[basePath]');
+        $app = Mockery::mock(Application::class . '[basePath]');
         $app->shouldReceive('basePath')->andReturn(vfsStream::url($this->vfsStreamDirectoryName));
 
         return $app;
