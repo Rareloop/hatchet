@@ -2,7 +2,7 @@
     "name": "rareloop/hatchet",
     "require": {
         "php": "^7.3.0||^8.0.0",
-        "rareloop/lumberjack-core": "dev-add-php8-support as 5.0.0",
+        "rareloop/lumberjack-core": "^5.0.1",
         "symfony/console": "^4.1",
         "icanboogie/inflector": "^2.0",
         "statamic/stringy": "^3.1.1"
