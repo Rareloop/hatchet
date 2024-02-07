@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CommandTest extends TestCase
 {
-    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+    use MockeryPHPUnitIntegration;
 
     /** @test */
     public function can_create_a_command_with_a_name()
@@ -55,9 +55,10 @@ class CommandWithSignature extends Command
     protected $signature = 'test:command {name} {--option}';
 }
 
+#[AsCommand(
+    name: 'test:command',
+    description: 'testing123'
+)]
 class CommandWithDescription extends Command
 {
-    protected $name = 'test:command';
-
-    protected $description = 'testing123';
 }

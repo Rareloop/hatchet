@@ -44,5 +44,5 @@ class AnotherTestCommand extends Command
         $this->setName('test:command');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output) {}
+    protected function execute(InputInterface $input, OutputInterface $output): int {}
 }

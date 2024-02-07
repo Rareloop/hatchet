@@ -12,7 +12,7 @@ class ControllerMake extends MakeFromStubCommand
 
     protected $description = 'Create a Controller';
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $name = $input->getArgument('name');
 
@@ -20,5 +20,6 @@ class ControllerMake extends MakeFromStubCommand
         $stub = str_replace('DummyController', $name, $stub);
 
         $this->createFile('app/Http/Controllers/'.$name.'.php', $stub);
+        return self::SUCCESS;
     }
 }

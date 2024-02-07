@@ -4,6 +4,7 @@ namespace Rareloop\Hatchet\Commands;
 
 use ICanBoogie\Inflector;
 use Rareloop\Hatchet\Commands\MakeFromStubCommand;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,13 +13,13 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 use function Stringy\create as s;
 
+#[AsCommand(
+    name: 'make:posttype {name : The class name of the PostType (singular)}',
+    description: 'Create a PostType'
+)]
 class PostTypeMake extends MakeFromStubCommand
 {
-    protected $signature = 'make:posttype {name : The class name of the PostType (singular)}';
-
-    protected $description = 'Create a PostType';
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $singular = $input->getArgument('name');
         $plural = Inflector::get('en')->pluralize($singular);
