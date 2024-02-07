@@ -4,6 +4,7 @@ namespace Rareloop\Hatchet\Commands;
 
 use ICanBoogie\Inflector;
 use Rareloop\Hatchet\Commands\MakeFromStubCommand;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
