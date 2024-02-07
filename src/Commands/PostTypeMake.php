@@ -12,13 +12,13 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 use function Stringy\create as s;
 
+#[AsCommand(
+    name: 'make:posttype {name : The class name of the PostType (singular)}',
+    description: 'Create a PostType'
+)]
 class PostTypeMake extends MakeFromStubCommand
 {
-    protected $signature = 'make:posttype {name : The class name of the PostType (singular)}';
-
-    protected $description = 'Create a PostType';
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $singular = $input->getArgument('name');
         $plural = Inflector::get('en')->pluralize($singular);

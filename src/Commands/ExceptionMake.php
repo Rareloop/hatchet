@@ -6,13 +6,13 @@ use Rareloop\Hatchet\Commands\MakeFromStubCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(
+    name: 'make:exception {name : The class name of the Exception}',
+    description: 'Create a Exception'
+)]
 class ExceptionMake extends MakeFromStubCommand
 {
-    protected $signature = 'make:exception {name : The class name of the Exception}';
-
-    protected $description = 'Create a Exception';
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $name = $input->getArgument('name');
 

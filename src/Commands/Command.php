@@ -23,10 +23,6 @@ abstract class Command extends SymfonyCommand
         } else {
             parent::__construct($this->name);
         }
-
-        if (isset($this->description)) {
-            $this->setDescription($this->description);
-        }
     }
 
     protected function configureFromSignature()
